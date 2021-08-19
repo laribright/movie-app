@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from '../components/header'
 import Nav from "../components/nav";
+import Movies from "../components/movies";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
       <Header />
 
       <Nav />
+
+      <Movies />
 
     </div>
   );
