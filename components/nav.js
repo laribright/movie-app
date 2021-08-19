@@ -1,12 +1,17 @@
+import { useRouter } from "next/router";
+
 import requests from "../utils/requests";
 
 function Nav() {
+  const router = useRouter();
+
   return (
     <nav className="relative">
       <div className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 overflow-x-scroll scrollbar-hide">
         {Object.entries(requests).map(([key, { title, url }]) => (
           <h2
             key={key}
+            onClick={() => router.push(`/?genre=${key}`)}
             className="cursor-pointer last:pr-24 transition duration-100 transform hover:scale-125 hover:text-yellow-100 active:text-yellow-400"
           >
             {title}
